@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#this scrpit displays 10 times "Best School" using an until loop
+i=0
+until [ $i -gt 9 ]
+do
+	echo "Best School"
+	i=$((i+1))
+done
