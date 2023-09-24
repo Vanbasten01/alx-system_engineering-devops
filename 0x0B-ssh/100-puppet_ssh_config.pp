@@ -9,5 +9,5 @@ file_line {'privat key identity':
 file_line { 'no password authentication':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => 'PasswordAutentication  no',
+  line   => 'PasswordAutentication no',
 }
