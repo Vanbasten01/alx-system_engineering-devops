@@ -4,8 +4,8 @@
 sudo get-apt -y update
 sudo get-apt -y install nginx
 echo "Hello World!" > sudo tee /var/www/html/yasin.html
-echo  "Ceci n'est pas une page" | sudo tee /var/www/html/notfound.html
-echo  "server {
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/notfound.html
+echo "server {
 	listen 80;
 
 	listen [::]:80 default_server;
