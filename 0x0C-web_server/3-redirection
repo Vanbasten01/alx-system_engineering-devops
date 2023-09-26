@@ -16,6 +16,6 @@ echo  "server {
 
 		return 301 https://youtube.com;
 	}
-}" > sudo tee /etc/nginx/sites-available/default
+}" | sudo tee /etc/nginx/sites-available/default
 
 sudo service nginx restart
