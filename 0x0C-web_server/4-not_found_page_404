@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#Bash script that configures an Nginx server to have custom 404 page with a custom text
+# Bash script that configures an Nginx server to have custom 404 page with a custom text
 
 sudo get-apt -y update
 sudo get-apt -y install nginx
 echo "Hello World!" > sudo tee /var/www/html/yasin.html
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/notfound.html
+echo -e "Ceci n'est pas une page/n" | sudo tee /var/www/html/notfound.html
 echo  "server {
 	listen 80;
 
