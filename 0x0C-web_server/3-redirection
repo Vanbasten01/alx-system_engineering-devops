@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Bash script that configures an Nginx server so that /redirect_me is redirecting to another page.
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" > sudo tee /var/www/html/yasin.index
+echo  "server {
+	listen 80;
+
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index yasin.index index.html index.nginx-debian.html;
+
+	location /redirect_me {
+
+		return 301 http://youtube.com;
+	}
+}" > sudo tee /etc/nginx/sites-available/default
+
+sudo service nginx restart
