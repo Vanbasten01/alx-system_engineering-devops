@@ -10,7 +10,7 @@ echo  "server {
 
 	root /var/www/html;
 
-	index yasin.index index.html index.nginx-debian.html;
+	index yasin.index index.html index.htm index.nginx-debian.html;
 
 	location /redirect_me {
 
