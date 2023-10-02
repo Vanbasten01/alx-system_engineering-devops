@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-## This script installs and configures HAProxy as a load balancer for two web servers.
+# This script installs and configures HAProxy as a load balancer for two web servers.
 
 sudo apt-get update
 sudo apt-get install --no-install-recommends software-properties-common
