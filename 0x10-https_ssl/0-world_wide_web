@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
-# Bash script to display DNS information about subdomains.
+# Bash script that retrieves DNS information for a specified domain and subdomain.
 
 get_dns_info() {
     local domain="$1"
     local sub="$2"
+    
     local result
-    result=$(dig "$sub.$domain" +short | tail -1)
-
+    result=$(dig +short "$sub.$domain" | tail -1)
+    
     if [ -n "$result" ]; then
         local rec_type
-        rec_type=$(dig "$sub.$domain" +short -t ANY | awk 'FNR == 2 {print $4}')
+        rec_type=$(dig +short -t ANY "$sub.$domain" | awk 'NR == 2 {print $2}')
         echo "The subdomain $sub is a $rec_type record and points to $result"
     fi
 }
@@ -25,3 +26,4 @@ else
         get_dns_info "$domain" "$sub"
     done
 fi
+
