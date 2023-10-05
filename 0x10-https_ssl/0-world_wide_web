@@ -6,10 +6,10 @@ get_dns_info() {
     local sub="$2"
     local result
     result=$(dig "$sub.$domain" +short)
-    
+
     if [ -n "$result" ]; then
         local rec_type
-        rec_type=$(dig "$sub.$domain" +short -t ANY | awk '{print $2}')
+        rec_type=$(dig "$sub.$domain" +short -t ANY | awk 'FNR == 2 {print $4}')
         echo "The subdomain $sub is a $rec_type record and points to $result"
     fi
 }
@@ -25,3 +25,4 @@ else
         get_dns_info "$domain" "$sub"
     done
 fi
+
