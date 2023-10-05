@@ -5,7 +5,7 @@ get_dns_info() {
     local domain="$1"
     local sub="$2"
     local result
-    result=$(dig "$sub.$domain" +short)
+    result=$(dig "$sub.$domain" +short | tail -1)
 
     if [ -n "$result" ]; then
         local rec_type
@@ -25,4 +25,3 @@ else
         get_dns_info "$domain" "$sub"
     done
 fi
-
