@@ -9,7 +9,7 @@ get_dns_info() {
     
     if [ -n "$result" ]; then
         local rec_type
-        rec_type=$(dig "$sub.$domain" +short -t ANY | awk '{print $2}')
+	rec_type=$(dig "$sub"."$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tail -1)
         echo "The subdomain $sub is a $rec_type record and points to $result"
     fi
 }
