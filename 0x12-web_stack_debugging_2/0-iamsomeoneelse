@@ -2,4 +2,4 @@
 #whoami with another user
 
 username="$1"
-su -u "$username" whoami
+sudo -u "$username" whoami
