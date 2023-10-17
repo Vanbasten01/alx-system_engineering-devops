@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#whoami with another user
+
+username = "$1"
+su -u "$username" whoami
