@@ -15,7 +15,7 @@ import requests
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     user_id = sys.argv[1]
-    usrname = (requests.get(f"{url}users/{sys.argv[1]}").json().get("usrname"))
+    usrname = (requests.get(f"{url}users/{user_id}").json().get("username"))
     todos = (requests.get(f"{url}user/{user_id}/todos").json())
     tasks = list(todos)
 
