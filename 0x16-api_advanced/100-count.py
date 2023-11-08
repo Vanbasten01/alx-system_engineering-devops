@@ -1,18 +1,18 @@
 #!/usr/bin/python3
+"""  a recursive function that queries the Reddit API"""
 import requests
-"""  a recursive function that queries the Reddit API, parses
-the title of all hot articles, and prints a sorted count of given
-keywords (case-insensitive, delimited by spaces. Javascript
-should count as javascript, but java should not)."""
 
 
-def count_words(subreddit, word_list, after="", counts=None):
-    """ """
+def count_words(subreddit, word_list, after="", counts={}):
+    """
+    it parses the title of all hot articles, and prints a
+    sorted count of given keywords (case-insensitive, delimited
+    by spaces. Javascript should count as javascript,
+    but java should not).
+    """
+
     if not subreddit:
         return None
-
-    if counts is None:
-        counts = {}
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?after={after}"
     headers = {"User-Agent": "0x16. API advanced/Task0"}
