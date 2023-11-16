@@ -7,7 +7,7 @@ exec { 'replace_line':
 
 #restart NGINX only if the file is modified
 service { 'nginx':
-  ensure     => 'running',
-  enable     => true,
-  subscribe  => Exec['replace_line'],
+  ensure    => 'running',
+  enable    => true,
+  subscribe => Exec['replace_line'],
 }
